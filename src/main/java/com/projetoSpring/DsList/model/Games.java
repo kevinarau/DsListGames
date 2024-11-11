@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tb_games")
+@Table(name = "tb_game")
 public class Games {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,20 +15,24 @@ public class Games {
     private Integer year;
     private String genre;
     private String platforms;
-    private String imaUrl;
-    private String shortDrescriptions;
-    private String longDrescriptios;
+    private double score;
+    private String imgUrl;
+    @Column(columnDefinition = "TEXT")
+    private String shortDescription;
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;
 
     public Games() {
     }
 
-    public Games(String genre, Long id, String imaUrl, String longDrescriptios, String platforms, String shortDrescriptions, String title, Integer year) {
+    public Games(String genre, Long id, String imgUrl, String longDescription, String platforms, double score, String shortDescription, String title, Integer year) {
         this.genre = genre;
         this.id = id;
-        this.imaUrl = imaUrl;
-        this.longDrescriptios = longDrescriptios;
+        this.imgUrl = imgUrl;
+        this.longDescription = longDescription;
         this.platforms = platforms;
-        this.shortDrescriptions = shortDrescriptions;
+        this.score = score;
+        this.shortDescription = shortDescription;
         this.title = title;
         this.year = year;
     }
@@ -49,29 +53,39 @@ public class Games {
         this.id = id;
     }
 
-    public String getImaUrl() {
-        return imaUrl;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setImaUrl(String imaUrl) {
-        this.imaUrl = imaUrl;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
-    public String getLongDrescriptios() {
-        return longDrescriptios;
+    public String getLongDescription() {
+        return longDescription;
     }
 
-    public void setLongDrescriptios(String longDrescriptios) {
-        this.longDrescriptios = longDrescriptios;
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
     }
 
-    public String getShortDrescriptions() {
-        return shortDrescriptions;
+    public String getShortDescriptions() {
+        return shortDescription;
     }
 
-    public void setShortDrescriptions(String shortDrescriptions) {
-        this.shortDrescriptions = shortDrescriptions;
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
+
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
+    }
+
+
 
     public String getPlatforms() {
         return platforms;
