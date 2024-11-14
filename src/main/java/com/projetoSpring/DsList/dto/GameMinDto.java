@@ -1,6 +1,7 @@
 package com.projetoSpring.DsList.dto;
 
 import com.projetoSpring.DsList.model.Games;
+import com.projetoSpring.DsList.projection.GamesMinProjection;
 import jakarta.persistence.Column;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,13 @@ public class GameMinDto {
         this.shortDescription = games.getShortDescriptions();
         this.title = games.getTitle();
         this.year = games.getYear();
+    }
+    public GameMinDto(GamesMinProjection projection) {
+        this.id = projection.getId();
+        this.imgUrl = projection.getImgUrl();
+        this.shortDescription = projection.getShortDescriptions();
+        this.title = projection.getTitle();
+        this.year = projection.getYear();
     }
 
     public Long getId() {
