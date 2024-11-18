@@ -23,6 +23,8 @@ public class GameListController {
     private GamesListService gamesListService;
     @Autowired
     private GamesService gamesService;
+
+
     @GetMapping
     public List<GameListDto> findAll(){
       List<GameListDto> all = gamesListService.findAll();

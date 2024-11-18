@@ -3,7 +3,7 @@ package com.projetoSpring.DsList.projection;
 public interface GamesMinProjection {
     Long getId();
     String getTitle();
-    Integer getYear();
+    Integer getGameYear();
     String getImgUrl();
     String getShortDescriptions();
     Integer getPosition();
